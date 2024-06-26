@@ -2,7 +2,7 @@ package br.com.mafe.desafio_todolist.controller;
 
 import br.com.mafe.desafio_todolist.entity.Todo;
 import br.com.mafe.desafio_todolist.service.TodoService;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +16,7 @@ public class TodoController {
     }
 
     @PostMapping
-    List<Todo> create(@RequestBody Todo todo){
+    List<Todo> create(@RequestBody @Valid Todo todo){
         return todoService.create(todo);
     }
     @GetMapping
