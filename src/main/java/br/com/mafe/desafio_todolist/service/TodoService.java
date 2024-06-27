@@ -23,7 +23,7 @@ public class TodoService {
         return todoRepository.findAll(sort);
     }
     public List<Todo> atualiza(Todo todo){
-        todoRepository.save(todo)
+        todoRepository.save(todo);
         return listagem();
     }
     public List<Todo> delete(Long id){
